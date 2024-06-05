@@ -1,0 +1,13 @@
+.App{
+  text-align: center;
+}
+
+
+ul {
+  padding: 0px;
+  list-style: none;
+}
+
+.list-item span{
+  padding: 10px;
+}
