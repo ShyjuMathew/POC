@@ -1,6 +1,5 @@
 import './App.css';
-import React from 'react';
-import FileUpload from './components/FileUpload/FileUpload';
+import FileUpload from './components/FileUpload/FileUpload'
 
 function App() {
   return (

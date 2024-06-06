@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import axios from 'axios';
 import './FileUpload.css';
 
-const FileUpload = () => {
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [uploadProgress, setUploadProgress] = useState(0);
+const FileUpload: React.FC = () => {
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [uploadProgress, setUploadProgress] = useState<number>(0);
 
-  const handleUploadClick = ()=>{
-    setUploadProgress(0)
-  }
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const handleUploadClick = () => {
+    setUploadProgress(0);
+  };
+
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectedFile(event.target.files[0]);
+    }
   };
 
   const handleFileUpload = async () => {
+    if (!selectedFile) return;
+
     const formData = new FormData();
     formData.append('file', selectedFile);
 
@@ -23,8 +28,10 @@ const FileUpload = () => {
           'Content-Type': 'multipart/form-data',
         },
         onUploadProgress: (progressEvent) => {
-          const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-          setUploadProgress(progress);
+          if (progressEvent.total) {
+            const progress = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            setUploadProgress(progress);
+          }
         },
       });
 

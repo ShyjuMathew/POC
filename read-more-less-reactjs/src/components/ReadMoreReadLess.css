@@ -1,0 +1,17 @@
+.read-more-read-less {
+    margin: 20px 0;
+  }
+  
+  .read-more-read-less p {
+    display: inline;
+  }
+  
+  .read-more-read-less button {
+    margin-left: 10px;
+    background-color: transparent;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
