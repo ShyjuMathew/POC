@@ -1,13 +1,21 @@
 import { useState } from 'react';
 
-const useAccordion = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const useAccordions = (allowMultiple: boolean) => {
+  const [openAccordions, setOpenAccordions] = useState<string[]>([]);
 
-  const toggle = () => {
-    setIsOpen(!isOpen);
+  const toggleAccordion = (id: string) => {
+    setOpenAccordions((prev) => {
+      if (allowMultiple) {
+        return prev.includes(id) ? prev.filter((accordionId) => accordionId !== id) : [...prev, id];
+      } else {
+        return prev.includes(id) ? [] : [id];
+      }
+    });
   };
 
-  return { isOpen, toggle };
+  const isOpen = (id: string) => openAccordions.includes(id);
+
+  return { toggleAccordion, isOpen };
 };
 
-export default useAccordion;
+export default useAccordions;

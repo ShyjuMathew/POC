@@ -1,7 +1,7 @@
 import React from 'react';
 import useScreenSize from '../../hooks/useScreenSize';
 
-const ScreenSizeComponent: React.FC = () => {
+const ScreenSize: React.FC = () => {
   const { width, height, deviceType } = useScreenSize();
 
   return (
@@ -14,4 +14,4 @@ const ScreenSizeComponent: React.FC = () => {
   );
 };
 
-export default ScreenSizeComponent;
+export default ScreenSize;

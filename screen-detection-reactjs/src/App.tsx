@@ -1,10 +1,10 @@
 import './App.css';
-import ScreenSizeComponent from './components/ScreenSizeComponent/ScreenSizeComponent';
+import ScreenSize from './components/ScreenSizeComponent/ScreenSize';
 
 function App() {
   return (
     <div className="App">
-           <ScreenSizeComponent />
+           <ScreenSize />
     </div>
   );
 }

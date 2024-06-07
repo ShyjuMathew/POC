@@ -1,18 +1,17 @@
-import { ReactNode } from "react";
-import useAccordion from "../../hooks/useAccordion";
-import "./Accordion.css";
+import React, { ReactNode } from 'react';
+import './Accordion.css';
 
-interface PropsType {
-  title : string;
-  children : ReactNode
+interface AccordionProps {
+  title: string;
+  children: ReactNode;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const Accordion = ({title, children} : PropsType) => {
-  const { isOpen, toggle } = useAccordion();
-
+const Accordion: React.FC<AccordionProps> = ({ title, children, isOpen, onToggle }) => {
   return (
     <div className="accordion">
-      <div className="accordion-header" onClick={toggle}>
+      <div className="accordion-header" onClick={onToggle}>
         <h2>{title}</h2>
         <span>{isOpen ? "-" : "+"}</span>
       </div>
