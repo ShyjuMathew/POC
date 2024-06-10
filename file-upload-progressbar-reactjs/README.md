@@ -1,6 +1,10 @@
-# File Upload with Percentage Progressbar
+# Introduction
 
 - This project is created to showcase how to implement file upload functionality with percentage display along with progress bar
+
+## Technologies
+-React : 18.3.1
+-Node : 20.14.0
 
 ## Browse files
 

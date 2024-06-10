@@ -1,6 +1,10 @@
-# Custom Accordion with Custom Hook
+# Introduction
 
 This project is created to showcase how a custom accordion can be created paired with a custom hook.
+
+## Technologies
+-React : 18.3.1
+-Node : 20.14.0
 
 ## Hook
 

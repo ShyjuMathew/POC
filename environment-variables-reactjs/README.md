@@ -1,6 +1,10 @@
-# System Environment Variables in ReactJS
+# Introduction
 
 This project is created to demonstrate how we can extract system environment variables in ReactJS.
+
+## Technologies
+-React : 18.3.1
+-Node : 20.14.0
 
 ## System Environment Variables
 
